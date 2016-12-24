@@ -6,7 +6,8 @@
     "node": ">=6.9.2"
   },
   "scripts": {
-    "start": "npm run build && node server.js",
+    "postinstall": "npm run build",
+    "start": "node server.js",
     "debug": "webpack-dev-server --inline --progress --port 8080",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
@@ -37,10 +38,10 @@
     "style-loader": "^0.13.1",
     "typescript": "~2.0.10",
     "webpack": "^1.13.0",
-    "webpack-merge": "^0.14.0"
+    "webpack-merge": "^0.14.0",
+    "@types/node": "^6.0.45"
   },
   "devDependencies": {
-    "@types/node": "^6.0.45",
     "webpack-dev-server": "^1.14.1"
   }
 }
