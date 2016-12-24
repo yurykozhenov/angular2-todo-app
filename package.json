@@ -2,16 +2,27 @@
   "name": "angular2-todo-app",
   "version": "1.0.0",
   "description": "Basic Angular 2 application",
+  "private": true,
   "engines": {
     "node": ">=6.9.2"
   },
+  "main": "server.js",
   "scripts": {
     "postinstall": "npm run build",
     "start": "node server.js",
     "debug": "webpack-dev-server --inline --progress --port 8080",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yurykozhenov/angular2-todo-app.git"
+  },
+  "author": "Yury Kozhenov <yurykozhenov@gmail.com>",
   "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/yurykozhenov/angular2-todo-app/issues"
+  },
+  "homepage": "https://github.com/yurykozhenov/angular2-todo-app#readme",
   "dependencies": {
     "@angular/common": "~2.4.0",
     "@angular/compiler": "~2.4.0",
