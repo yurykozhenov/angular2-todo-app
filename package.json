@@ -11,7 +11,8 @@
     "postinstall": "npm run build",
     "start": "node server.js",
     "debug": "webpack-dev-server --inline --progress --port 8080",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "lint": "tslint 'src/**/*.ts' --force"
   },
   "repository": {
     "type": "git",
@@ -55,6 +56,8 @@
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
+    "codelyzer": "^2.0.0-beta.4",
+    "tslint": "^4.2.0",
     "webpack-dev-server": "^1.14.1"
   }
 }
