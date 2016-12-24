@@ -20,3 +20,7 @@ jspm_packages
 
 # Builded app directory
 dist
+
+# IDE directories
+.vscode
+.idea
