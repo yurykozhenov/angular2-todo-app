@@ -1,4 +1,4 @@
-# [Angular 2 Todo app](https://yk-angular2-todo-app.herokuapp.com)
+# [Angular 2 Todo App](https://yk-angular2-todo-app.herokuapp.com)
 ### Basic Angular 2 application
 
 Requirements:
