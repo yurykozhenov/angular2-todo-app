@@ -7,7 +7,6 @@
   "attr-no-duplication": true,
   "title-require": true,
   "tagname-lowercase": true,
-  "id-class-value": "dash",
   "doctype-html5": true,
   "style-disabled": true,
   "inline-style-disabled": true,

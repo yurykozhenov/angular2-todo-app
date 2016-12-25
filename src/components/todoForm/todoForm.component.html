@@ -1,0 +1,49 @@
+<div class="jumbotron">
+  <h2 class="text-center">
+    <i class="material-icons">add</i>
+    New Todo
+  </h2>
+
+  <form [formGroup]="todoForm"
+        (submit)="onSubmit($event, todoForm.value)"
+        novalidate>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': !todoForm.controls['title'].valid && todoForm.controls['title'].touched}">
+      <label for="title">Title</label>
+      <input type="text"
+             class="form-control"
+             id="title"
+             name="title"
+             [formControl]="todoForm.controls['title']"
+             required>
+      <div *ngIf="todoForm.controls['title'].hasError('required') && todoForm.controls['title'].touched"
+           class="alert alert-danger">
+        Title is required
+      </div>
+    </div>
+
+    <div class="form-group"
+         [ngClass]="{'has-error': !todoForm.controls['description'].valid && todoForm.controls['description'].touched}">
+      <label for="description">
+        Description
+      </label>
+      <textarea class="form-control"
+                id="description"
+                name="description"
+                [formControl]="todoForm.controls['description']"
+                maxlength="250">
+      </textarea>
+      <div *ngIf="todoForm.controls['description'].hasError('maxlength') && todoForm.controls['description'].touched"
+           class="alert alert-danger">
+        Description cannot be more than 250 characters long.
+      </div>
+    </div>
+
+    <button type="submit"
+            class="btn btn-default"
+            [disabled]="!todoForm.valid">
+      Save
+    </button>
+  </form>
+</div>

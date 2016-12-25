@@ -1,0 +1,10 @@
+<ul>
+  <li *ngFor="let todo of todos">
+    <h2>{{todo.title}}</h2>
+    <h4>
+      Created at:
+      <em>{{todo.createdAt | date:'medium'}}</em>
+    </h4>
+    <p>{{todo.description}}</p>
+  </li>
+</ul>

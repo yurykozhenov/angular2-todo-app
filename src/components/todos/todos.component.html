@@ -1,0 +1,17 @@
+<tl-todo-form></tl-todo-form>
+
+<section class="well">
+  <h1 class="text-center">
+    <i class="material-icons">format_list_bulleted</i>
+    <span>Todos</span>
+  </h1>
+  <tl-todo-list [todos]="uncompletedTodos"></tl-todo-list>
+</section>
+
+<section class="well">
+  <h1 class="text-center">
+    <i class="material-icons">check</i>
+    Done
+  </h1>
+  <tl-todo-list [todos]="completedTodos"></tl-todo-list>
+</section>

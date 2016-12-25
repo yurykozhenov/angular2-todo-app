@@ -30,13 +30,21 @@ module.exports = {
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
       {
-        test: /\.scss$/,
-        include: helpers.root('src', 'styles'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap', 'sass')
+        test: /\.json$/,
+        loader: 'file?name=mocks/[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
         test: /\.scss$/,
-        exclude: helpers.root('src', 'styles'),
+        exclude: helpers.root('src', 'components'),
+        loader: ExtractTextPlugin.extract('style', 'css!sass')
+      },
+      {
+        test: /\.scss$/,
+        include: helpers.root('src', 'components'),
         loaders: ['raw', 'sass']
       }
     ]

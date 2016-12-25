@@ -5,6 +5,8 @@ import { AppModule } from './app.module';
 
 import './styles/main.scss';
 
+import './mocks/mocks';
+
 if (process.env.ENV === 'production') {
   enableProdMode();
 }
