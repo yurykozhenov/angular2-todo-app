@@ -1,15 +1,27 @@
 # [Angular 2 Todo App](https://yk-angular2-todo-app.herokuapp.com)
-### Basic Angular 2 application
+Basic Angular 2 application
 
-Requirements:
+### Requirements:
 - NodeJS >= 6.9.2
 
-Install dependencies
+### Commands:
+
+Install dependencies:
 ```
 npm install
 ```
 
-Run app in debug mode
+Run app in debug mode:
+```
+npm run debug
+```
+
+Build app:
+```
+npm run build
+```
+
+Run builded app:
 ```
 npm start
 ```
