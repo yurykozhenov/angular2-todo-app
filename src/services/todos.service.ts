@@ -7,17 +7,20 @@ import { Todo } from '../models/todo.model';
 export class TodosService {
 
   private todos: Todo[];
+  private currentTopId: number;
 
   constructor(
     private http: Http
   ) {
     this.todos = JSON.parse(localStorage.getItem('todos'));
+    this.currentTopId = JSON.parse(localStorage.getItem('todosCurrentTopId'));
   }
 
   getTodos(): Promise<Todo[]> {
     return new Promise<Todo[]>((resolve, reject) => {
 
       if (!this.todos) {
+        // If it's initial app run, load some mock data
 
         this.http.get('mocks/todos.json')
           .toPromise()
@@ -44,6 +47,7 @@ export class TodosService {
   }
 
   addTodo(todo: Todo) {
+    todo.id = this.currentTopId + 1;
     todo.createdAt = new Date();
     todo.completed = false;
 
@@ -52,7 +56,15 @@ export class TodosService {
     this.setTodos();
   }
 
+  deleteTodo(todo: Todo) {
+    this.todos.splice(this.todos.findIndex(todoInTodos => todoInTodos.id === todo.id), 1);
+
+    this.setTodos();
+  }
+
   private setTodos() {
     localStorage.setItem('todos', JSON.stringify(this.todos));
+    this.currentTopId = this.todos.length ? this.todos[this.todos.length - 1].id : 0;
+    localStorage.setItem('todosCurrentTopId', JSON.stringify(this.currentTopId));
   }
 }

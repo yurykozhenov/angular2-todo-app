@@ -6,5 +6,10 @@
       <em>{{todo.createdAt | date:'medium'}}</em>
     </h4>
     <p>{{todo.description}}</p>
+    <button (click)="onDelete(todo)"
+      class="btn btn-danger">
+      <i class="material-icons">delete</i>
+      Delete
+    </button>
   </li>
 </ul>

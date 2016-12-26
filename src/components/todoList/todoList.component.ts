@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Todo } from '../../models/todo.model';
 
@@ -8,5 +8,10 @@ import { Todo } from '../../models/todo.model';
   // styleUrls: ['./todoList.component.scss']
 })
 export class TodoListComponent {
+  @Output() delete = new EventEmitter<any>();
   @Input() todos: Todo[];
+
+  onDelete(todo: Todo) {
+    this.delete.emit(todo);
+  }
 }
