@@ -16,6 +16,11 @@ Run app in debug mode:
 npm run debug
 ```
 
+Lint app with TSLint:
+```
+npm run lint
+```
+
 Build app:
 ```
 npm run build
