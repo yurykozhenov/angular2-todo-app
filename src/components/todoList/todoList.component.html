@@ -1,11 +1,11 @@
 <ul>
   <li *ngFor="let todo of todos">
-    <h2>{{todo.title}}</h2>
+    <h2 class="text-wrap">{{todo.title}}</h2>
     <h4>
       Created at:
       <em>{{todo.createdAt | date:'medium'}}</em>
     </h4>
-    <p>{{todo.description}}</p>
+    <p class="text-ellipsis">{{todo.description}}</p>
     <button (click)="onDelete(todo)"
       class="btn btn-danger">
       <i class="material-icons">delete</i>
