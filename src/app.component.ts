@@ -7,7 +7,8 @@ import { Component } from '@angular/core';
       <div class="page-header">
         <h1 class="text-center">Angular 2 Todo App</h1>
       </div>
-      <tl-todos></tl-todos>
+      <a routerLink="/todos">Heroes</a>
+      <router-outlet></router-outlet>
     </main>
   `
 })

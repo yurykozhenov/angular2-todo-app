@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -16,7 +17,13 @@ import { TodoFormComponent } from './components/todoForm/todoForm.component';
     BrowserModule,
     HttpModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forRoot([
+      {
+        path: 'todos',
+        component: TodosComponent
+      }
+    ])
   ],
   declarations: [
     AppComponent,
