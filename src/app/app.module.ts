@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
+import { PageNotFoundComponent } from '../components/pageNotFound/pageNotFound.component';
+
 import { TodosService } from '../services/todos.service';
 
 import { TodosComponent } from './todos/todos.component';
@@ -24,6 +26,7 @@ import { appRoutes } from './app.routes';
   ],
   declarations: [
     AppComponent,
+    PageNotFoundComponent,
     TodosComponent,
     TodoListComponent,
     TodoFormComponent
