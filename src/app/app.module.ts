@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
-import { TodosService } from './services/todos.service';
+import { TodosService } from '../services/todos.service';
 
-import { TodosComponent } from './components/todos/todos.component';
-import { TodoListComponent } from './components/todoList/todoList.component';
-import { TodoFormComponent } from './components/todoForm/todoForm.component';
+import { TodosComponent } from './todos/todos.component';
+import { TodoListComponent } from '../components/todoList/todoList.component';
+import { TodoFormComponent } from '../components/todoForm/todoForm.component';
+
+import { appRoutes } from './app.routes';
 
 @NgModule({
   imports: [
@@ -18,12 +20,7 @@ import { TodoFormComponent } from './components/todoForm/todoForm.component';
     HttpModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: 'todos',
-        component: TodosComponent
-      }
-    ])
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     AppComponent,

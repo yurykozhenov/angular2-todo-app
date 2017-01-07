@@ -1,5 +1,6 @@
 <ul>
-  <li *ngFor="let todo of todos">
+  <li *ngFor="let todo of todos"
+      class="well">
     <h2 class="text-wrap">{{todo.title}}</h2>
     <h4>
       Created at:
@@ -7,7 +8,7 @@
     </h4>
     <p class="text-ellipsis">{{todo.description}}</p>
     <button (click)="onDelete(todo)"
-      class="btn btn-danger">
+            class="btn btn-danger">
       <i class="material-icons">delete</i>
       Delete
     </button>
