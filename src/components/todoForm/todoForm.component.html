@@ -16,7 +16,8 @@
              id="title"
              name="title"
              [formControl]="todoForm.controls['title']"
-             required>
+             required
+             maxlength="100">
       <div *ngIf="todoForm.controls['title'].hasError('required') && todoForm.controls['title'].touched"
            class="alert alert-danger">
         Title is required

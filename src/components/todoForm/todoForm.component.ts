@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { CustomValidators } from '../../customValidators';
+
 import { TodosService } from '../../services/todos.service';
 
 import { Todo } from '../../models/todo.model';
@@ -25,8 +27,8 @@ export class TodoFormComponent implements OnInit {
 
   buildForm() {
     this.todoForm = this.fb.group({
-      'title': ['', Validators.required],
-      'description': ['', Validators.maxLength(250)]
+      'title': ['', [CustomValidators.required, Validators.maxLength(100)]],
+      'description': ['', [Validators.maxLength(250)]]
     });
   }
 

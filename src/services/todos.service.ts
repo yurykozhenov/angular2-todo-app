@@ -47,6 +47,8 @@ export class TodosService {
   }
 
   addTodo(todo: Todo) {
+    todo.title = todo.title.trim();
+    todo.description = todo.description.trim();
     todo.id = this.currentTopId + 1;
     todo.createdAt = new Date();
     todo.completed = false;
