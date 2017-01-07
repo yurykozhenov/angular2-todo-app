@@ -11,6 +11,7 @@ import { PageNotFoundComponent } from '../components/pageNotFound/pageNotFound.c
 import { TodosService } from '../services/todos.service';
 
 import { TodosComponent } from './todos/todos.component';
+import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from '../components/todoList/todoList.component';
 import { TodoFormComponent } from '../components/todoForm/todoForm.component';
 
@@ -28,6 +29,7 @@ import { appRoutes } from './app.routes';
     AppComponent,
     PageNotFoundComponent,
     TodosComponent,
+    TodoComponent,
     TodoListComponent,
     TodoFormComponent
   ],

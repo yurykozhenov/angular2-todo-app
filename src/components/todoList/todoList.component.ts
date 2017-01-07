@@ -11,7 +11,6 @@ export class TodoListComponent {
   @Output() complete = new EventEmitter<Todo>();
   @Output() delete = new EventEmitter<Todo>();
   @Input() todos: Todo[];
-  @Input() completed: boolean;
 
   onComplete(todo: Todo) {
     this.complete.emit(todo);

@@ -3,14 +3,14 @@
     "id": 0,
     "title": "Clean house",
     "description": "I need to clean my house",
-    "createdAt": "2016-12-24T22:47:48.019Z",
+    "createdAt": "2016-12-24T23:36:48.019Z",
     "completed": false
   },
   {
     "id": 1,
     "title": "Learn Angular 2",
     "description": "Angular 2 is really fun! I should definitely learn it!",
-    "createdAt": "2016-12-24T23:36:48.019Z",
+    "createdAt": "2016-12-24T22:47:48.019Z",
     "completed": true
   },
   {

@@ -27,8 +27,8 @@ export class TodoFormComponent implements OnInit {
 
   buildForm() {
     this.todoForm = this.fb.group({
-      'title': ['', [CustomValidators.required, Validators.maxLength(100)]],
-      'description': ['', [Validators.maxLength(250)]]
+      title: ['', [CustomValidators.required, Validators.maxLength(100)]],
+      description: ['', [Validators.maxLength(250)]]
     });
   }
 
