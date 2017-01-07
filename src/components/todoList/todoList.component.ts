@@ -8,8 +8,14 @@ import { Todo } from '../../models/todo.model';
   // styleUrls: ['./todoList.component.scss']
 })
 export class TodoListComponent {
-  @Output() delete = new EventEmitter<any>();
+  @Output() complete = new EventEmitter<Todo>();
+  @Output() delete = new EventEmitter<Todo>();
   @Input() todos: Todo[];
+  @Input() completed: boolean;
+
+  onComplete(todo: Todo) {
+    this.complete.emit(todo);
+  }
 
   onDelete(todo: Todo) {
     this.delete.emit(todo);

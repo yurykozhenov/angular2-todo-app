@@ -6,6 +6,8 @@
     <span>Todos</span>
   </h1>
   <tl-todo-list [todos]="uncompletedTodos"
+                [completed]="false"
+                (complete)="completeTodo($event)"
                 (delete)="deleteTodo($event)">
   </tl-todo-list>
 </section>
@@ -16,6 +18,7 @@
     Done
   </h1>
   <tl-todo-list [todos]="completedTodos"
+                [completed]="true"
                 (delete)="deleteTodo($event)">
   </tl-todo-list>
 </section>

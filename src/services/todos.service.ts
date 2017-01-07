@@ -27,7 +27,7 @@ export class TodosService {
           .then(response => response.json() as Todo[])
           .then(todos => {
             this.todos = todos;
-            this.setTodos();
+            this.saveTodos();
 
             resolve(this.todos);
           })
@@ -53,16 +53,30 @@ export class TodosService {
 
     this.todos.push(todo);
 
-    this.setTodos();
+    this.saveTodos();
   }
 
   deleteTodo(todo: Todo) {
-    this.todos.splice(this.todos.findIndex(todoInTodos => todoInTodos.id === todo.id), 1);
+    this.todos.splice(this.getTodoIndex(todo), 1);
 
-    this.setTodos();
+    this.saveTodos();
   }
 
-  private setTodos() {
+  completeTodo(todo: Todo) {
+    this.findTodo(todo).completed = true;
+
+    this.saveTodos();
+  }
+
+  private findTodo(todo: Todo): Todo {
+    return this.todos[this.getTodoIndex(todo)];
+  }
+
+  private getTodoIndex(todo: Todo): number {
+    return this.todos.findIndex(todoInTodos => todoInTodos.id === todo.id);
+  }
+
+  private saveTodos() {
     localStorage.setItem('todos', JSON.stringify(this.todos));
     this.currentTopId = this.todos.length ? this.todos[this.todos.length - 1].id : 0;
     localStorage.setItem('todosCurrentTopId', JSON.stringify(this.currentTopId));

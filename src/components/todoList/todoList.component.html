@@ -7,6 +7,12 @@
       <em>{{todo.createdAt | date:'medium'}}</em>
     </h4>
     <p class="text-ellipsis">{{todo.description}}</p>
+    <button *ngIf="!completed"
+            (click)="onComplete(todo)"
+            class="btn btn-success">
+      <i class="material-icons">check</i>
+      Complete
+    </button>
     <button (click)="onDelete(todo)"
             class="btn btn-danger">
       <i class="material-icons">delete</i>
